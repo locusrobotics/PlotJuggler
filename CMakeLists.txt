@@ -63,7 +63,7 @@ if(catkin_FOUND)
 
 message(STATUS ${catkin_INCLUDE_DIRS})
 
-    include_directories(${catkin_INCLUDE_DIRS})
+    include_directories(SYSTEM ${catkin_INCLUDE_DIRS})
     add_definitions(-DCOMPILED_WITH_CATKIN)
 
 elseif(ament_cmake_FOUND)
@@ -72,7 +72,7 @@ elseif(ament_cmake_FOUND)
     find_package(ament_cmake REQUIRED)
     find_package(ament_index_cpp REQUIRED)
     find_package(rclcpp REQUIRED)
-    include_directories(${ament_index_cpp_INCLUDE_DIRS})
+    include_directories(SYSTEM ${ament_index_cpp_INCLUDE_DIRS})
 
     message(STATUS "--------------------------------------------------")
     message(STATUS "PlotJuggler is being built using AMENT.")
@@ -146,6 +146,7 @@ else()
 ENDIF()
 
 include_directories(
+    SYSTEM
     ${Qt5Core_INCLUDE_DIRS}
     ${Qt5Widgets_INCLUDE_DIRS}
     ${Qt5Concurrent_INCLUDE_DIRS}
