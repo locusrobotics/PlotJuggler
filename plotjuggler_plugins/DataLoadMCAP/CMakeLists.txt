@@ -15,7 +15,7 @@ endif()
 
 if(Zstd_FOUND)
 
-    include_directories( ${Zstd_INCLUDE_DIRS} )
+    include_directories( SYSTEM ${Zstd_INCLUDE_DIRS} )
 
     add_definitions(${QT_DEFINITIONS})
     add_definitions(-DQT_PLUGIN)
